@@ -11,4 +11,9 @@ pids
 logs
 results
 
+bin/*
+lib/*
+local/*
+include/*
+
 npm-debug.log
