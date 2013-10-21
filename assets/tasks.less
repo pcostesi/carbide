@@ -1,0 +1,28 @@
+@lightRed:   #fdd;
+@lightGreen: #dfd;
+@lightYellow: #ffd;
+@lightBlue:  #ddf;
+@defaultColour: @lightBlue;
+
+.nice-tab(@colour){
+	display:inline-block;
+	width:100%;
+	height:30em;
+	background:@colour;
+	margin:1em;
+	margin-right: 1em;
+}
+
+.task .status-ok{
+	.nice-tab(@lightGreen);
+}
+.task .status-warning{
+	.nice-tab(@lightYellow);
+}
+.task .status-emergency{
+	.nice-tab(@lightRed);
+}
+
+.main-task{
+	.task();
+}
