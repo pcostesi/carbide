@@ -13,7 +13,7 @@ install:
 # script: nosetests
 script: 
   - "python manage.py test"
-  - "python manage.py harvest apps carbide"
+  - "python manage.py harvest features"
 
 before_script:
   - "pep8 --exclude=migrations --ignore=E501,E225 apps carbide"
