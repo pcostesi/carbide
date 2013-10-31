@@ -9,12 +9,12 @@ from fabric.contrib.files import upload_template
 
 
 def test():
-    with prefix("source env/bin/activate"):
+    with prefix(". env/bin/activate"):
         local("python manage.py harvest features")
         local("python manage.py test")
 
 def django_translate(user="www-data"):
-    with prefix("source env/bin/activate"):
+    with prefix(". env/bin/activate"):
         sudo("python manage.py compilemessages", user=user)
         sudo("python manage.py collectstatic --noinput", user=user)
         sudo("python manage.py clean_pyc")
