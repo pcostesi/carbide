@@ -164,6 +164,9 @@ LOGGING = {
     }
 }
 
+
+SECRET_KEY = 'THIS K3Y B3 SEKRITS'
+
 # Local settings
 try:
     import local_settings
