@@ -21,9 +21,11 @@ PIPELINE_COMPILERS = (
   'pipeline.compilers.less.LessCompiler',
 )
 
+SECRET_KEY = "THIS IS A SEKRIT K3Y LOLZ"
+ROOT_URLCONF = "urls"
 
 # Local settings
 try:
-    from . import local_settings
+    import local_settings
 except ImportError:
     local_settings = None
