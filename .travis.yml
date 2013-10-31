@@ -5,11 +5,15 @@ python:
   - "2.7"
 
 # command to install dependencies
-install: "pip install -r requirements.txt"
+install:
+  - "pip install -r requirements.txt"
+  - "sudo rmdir /dev/shm && sudo ln -Tsf /{run,dev}/shm"
 
 # command to run tests
 # script: nosetests
-script: python manage.py test
+script: 
+  - "python manage.py test"
+  - "python manage.py harvest"
 
 before_script:
   - "pep8 --exclude=migrations --ignore=E501,E225 apps carbide"
