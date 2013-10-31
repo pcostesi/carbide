@@ -13,4 +13,4 @@ script: python app/manage.py test
 
 before_script:
   - "pep8 --exclude=migrations --ignore=E501,E225 app"
-  - "pyflakes -x W app"
+#  - "pyflakes -x W app"
