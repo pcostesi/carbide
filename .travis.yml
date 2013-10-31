@@ -9,8 +9,8 @@ install: "pip install -r requirements.txt"
 
 # command to run tests
 # script: nosetests
-script: python app/manage.py test
+script: python manage.py test
 
 before_script:
-  - "pep8 --exclude=migrations --ignore=E501,E225 app"
+  - "pep8 --exclude=migrations --ignore=E501,E225 apps carbide"
 #  - "pyflakes -x W app"

@@ -28,7 +28,7 @@ def django_deploy(branch=None, user="www-data"):
     django_translate(user)
 
 def install_git_hooks():
-    local("cp hooks/* .git/hooks/")
+    local("ln -s hooks/pre-commit .git/hooks/pre-commit")
 
 def venv():
     local("source env/bin/activate")

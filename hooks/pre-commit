@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
 source env/bin/activate
-pep8 --exclude=migrations --ignore=E501,E225 app
+pep8 --exclude=migrations --ignore=E501,E225 apps carbide
 

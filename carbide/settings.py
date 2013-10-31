@@ -118,6 +118,10 @@ INSTALLED_APPS = (
     'pipeline',
     'raven',
     'newrelic',
+    'apps.confidential',
+    'apps.users',
+    'apps.organizations',
+    'apps.events',
 )
 
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'
