@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+set -e
+
+
 source env/bin/activate
 pep8 --exclude=migrations --ignore=E501,E225 apps carbide
 python manage.py harvest features
