@@ -4,8 +4,12 @@ python:
   - "2.6"
   - "2.7"
 
+cache:
+  directories:
+    - $HOME/.pip-cache/
+
 # command to install dependencies
-install: "pip install -r requirements.txt"
+install: "pip install -r requirements.txt --download-cache $HOME/.pip-cache"
 
 # command to run tests
 # script: nosetests
