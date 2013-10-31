@@ -122,6 +122,7 @@ INSTALLED_APPS = (
     'apps.users',
     'apps.organizations',
     'apps.events',
+    'lettuce.django', 
 )
 
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'
