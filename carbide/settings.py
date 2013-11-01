@@ -1,3 +1,24 @@
+import os
+import site
+
+
+# taken from https://github.com/nigma/django-modern-template
+def rel(*path):
+    """
+    Converts path relative to the project root into an absolute path
+
+    :rtype: str
+    """
+    return os.path.abspath(
+        os.path.join(
+            os.path.dirname(__file__),
+            os.path.pardir,
+            *path
+        )
+    ).replace("\\", "/")
+
+site.addpackage(rel("carbide"), "apps.pth", known_paths=set())
+
 # Django settings for carbide project.
 
 DEBUG = True
@@ -118,10 +139,10 @@ INSTALLED_APPS = (
     'pipeline',
     'raven',
     'newrelic',
-    'apps.confidential',
-    'apps.users',
-    'apps.organizations',
-    'apps.events',
+    'confidential',
+    'users',
+    'organizations',
+    'events',
     'lettuce.django',
 )
 
@@ -169,7 +190,7 @@ SECRET_KEY = 'THIS K3Y B3 SEKRITS'
 
 # Local settings
 try:
-    import local_settings
+    from local_settings import *
 except ImportError:
     local_settings = None
     # Make this unique, and don't share it with anybody.

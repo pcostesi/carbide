@@ -24,3 +24,5 @@ npm-debug.log
 
 env
 db
+
+local_settings.py
