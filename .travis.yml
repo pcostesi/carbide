@@ -9,12 +9,16 @@ cache:
     - $HOME/.pip-cache/
 
 # command to install dependencies
-install: "pip install -r requirements.txt --download-cache $HOME/.pip-cache"
+install:
+  - "pip install -r requirements.txt"
+  - "sudo rmdir /dev/shm && sudo ln -Tsf /{run,dev}/shm"
 
 # command to run tests
 # script: nosetests
-script: python app/manage.py test
+script: 
+  - "python manage.py test"
+  - "python manage.py harvest features"
 
 before_script:
-  - "pep8 --exclude=migrations --ignore=E501,E225 app"
+  - "pep8 --exclude=migrations --ignore=E501,E225 apps carbide"
 #  - "pyflakes -x W app"

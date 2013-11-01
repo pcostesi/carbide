@@ -1,4 +1,4 @@
-# Django settings for confidential project.
+# Django settings for carbide project.
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -13,6 +13,8 @@ MANAGERS = ADMINS
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
 ALLOWED_HOSTS = []
+
+USE_ETAGS = True
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -85,15 +87,16 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'confidential.urls'
+ROOT_URLCONF = 'carbide.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
-WSGI_APPLICATION = 'confidential.wsgi.application'
+WSGI_APPLICATION = 'carbide.wsgi.application'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
@@ -115,6 +118,11 @@ INSTALLED_APPS = (
     'pipeline',
     'raven',
     'newrelic',
+    'apps.confidential',
+    'apps.users',
+    'apps.organizations',
+    'apps.events',
+    'lettuce.django',
 )
 
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'
@@ -155,6 +163,9 @@ LOGGING = {
         },
     }
 }
+
+
+SECRET_KEY = 'THIS K3Y B3 SEKRITS'
 
 # Local settings
 try:
