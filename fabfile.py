@@ -45,3 +45,7 @@ def run(port=8080):
 def clean():
     with prefix(". env/bin/activate"):
         local("python manage.py clean_pyc")
+
+def install():
+    with prefix(". env/bin/activate"):
+        local("pip install -r requirements.txt")
