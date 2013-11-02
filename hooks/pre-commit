@@ -4,7 +4,7 @@ set -e
 
 
 source env/bin/activate
-pep8 --exclude=migrations --ignore=E501,E225 apps carbide
+pep8 --exclude=migrations --ignore=E501,E225 carbide carbide/apps
 python manage.py harvest features
-python manage.py test $(ls apps | grep -v "__" | cut -f2 -d"/" )
+python manage.py test $(ls carbide/apps| grep -v ".py" | cut -f2 -d"/" )
 
