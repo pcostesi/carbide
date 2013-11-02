@@ -42,6 +42,6 @@ def run(port=8080):
     with prefix(". env/bin/activate"):
         local("python manage.py runserver %s" % (port,))
 
-def clean(port=8080):
+def clean():
     with prefix(". env/bin/activate"):
-        local("python manage.py clean_pyc %s" % (port,))
+        local("python manage.py clean_pyc")
