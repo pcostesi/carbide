@@ -40,7 +40,7 @@ def install_git_hooks():
 
 def run(port=8080):
     with prefix(". env/bin/activate"):
-        local("python manage.py runserver %s" % (port,))
+        local("python manage.py runserver 0.0.0.0:%s" % (port,))
 
 def clean():
     with prefix(". env/bin/activate"):

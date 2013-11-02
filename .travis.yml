@@ -20,5 +20,5 @@ script:
   - "python manage.py harvest features"
 
 before_script:
-  - "pep8 --exclude=migrations --ignore=E501,E225 carbide carbide/apps"
+  - "pep8 --exclude=migrations --show-source --show-pep8 --ignore=E501,E225 carbide carbide/apps || echo ''"
 #  - "pyflakes -x W app"

@@ -147,6 +147,7 @@ INSTALLED_APPS = (
     'users',
     'organizations',
     'events',
+    'mocks',
 )
 
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'
