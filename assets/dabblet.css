@@ -1,0 +1,153 @@
+/**
+ * "Google Now" Card
+ */
+body {
+	background: #e1e1e1;
+	min-height: 100%;
+	margin: auto;
+}
+
+div.center {
+	width: 690px;
+	margin: auto;
+}
+
+ul.gNow {
+	width: 450px;
+	height: 100%;
+	float: left;
+	padding: 0;
+}
+ul.gNow li {
+	width: 430px;
+	float: left;
+	list-style: none;
+	padding: 10px;
+}
+
+div.card {
+	position: relative;
+	padding: 0;
+	margin: 0;
+	box-shadow: 0px 3px rgba( 0, 0, 0, 0.1 );
+	font-family: Roboto;
+	color: #444;
+	font-size: 14px;
+	border-radius: 2px;
+	overflow: hidden;
+	}
+	
+	div.card h1, h2, h3 {
+		font-family: Roboto;
+		font-weight: 300;
+		color: #878787;
+	}
+	
+	div.card p {
+		margin: 0 0 15px 0;
+		font-family: Roboto Slab;
+	}
+	
+	div.card .card-title {
+		font-size: 28px;
+		font-weight: 300;
+		color: #878787;
+		margin-top: 0;
+	}
+	
+	div.card p.url {
+		top: 1px solid #e5e5e5;
+		background-repeat: no-repeat;
+		padding: 6px 0 0 30px;
+		height: 30px;
+		display: block;
+		margin-bottom: -10px;
+		}
+	
+	div.card {
+		transition: transform 700ms cubic-bezier(0.19, 1, 0.22, 1);
+		background: white;
+		
+	    border-left: 3px solid green;
+	}
+	
+	 div.card > figure {
+	  margin: 0;
+	  height: 100%;
+	  width: 400px;
+	  display: block;
+	  top: 0px;
+	  left: 0px;
+	  float: left;
+	  background: white;
+	  padding: 15px;
+	  /* backface-visibility: hidden; */ /* This doesn't quite work (we rotate the div, not the elements), so we need to hide and play with z-indexes */
+	padding-left: -3px;
+}
+
+	div.card p.url a {
+		color: #04bff4;
+		text-decoration: none;
+		top: 4px;
+		width: 385px;
+		display: block;
+		position: relative;
+	}
+
+div.card div.shadow {
+	border-radius: inherit;
+	height: 25px;
+	margin-top: -25px;
+	display: inline;
+	pition: absolute;
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+	background-image: linear-gradient(to top, rgb(255, 255, 255) 3px, rgba(0,0,0, 0));
+	opacity: 0.9999;
+	z-index: 10000;
+}
+
+		ul.gNow li > div.flip {
+  		transform-style: preserve-3d;
+  		transform: perspective(200px) rotateY( 180deg );
+ 	}	
+ 	
+ 	ul.gNow li > div.flip > figure:nth-child(1) {
+  		visibility: hidden;
+ 	}	
+
+	div.card > figure:nth-child(2){
+		transform: rotateY( -180deg );
+		position: absolute;
+		z-index: -1;
+	}
+	
+	div.card.vintage h2 {
+		color: white;
+	}
+	
+	div.card.vintage > figure:nth-child(odd) {
+		background-image: linear-gradient(to bottom right, rgba(211, 131, 18, 0.5), rgba(168, 50, 121, 0.5));
+	}
+	
+	div.card.vintage > figure:nth-child(even) {
+		background-image: linear-gradient(to bottom right, rgba(154, 27, 192, 0.6), rgba(10, 86, 24, 0.3), rgba(254, 27, 93, 0.2));
+	}
+	
+	div.card.verge > figure {
+		background-image: linear-gradient(to bottom right, rgba(0, 47, 75, 0.5), rgba(220, 66, 37, 0.5));
+	}
+	
+	div.card.verge * {
+		color: white;
+	}
+	
+	div.card.vintage p {
+		color: white;
+	}
+	
+	div.card img.full {
+	width: 430px;
+	margin: 0 0 15px -15px;
+	}
