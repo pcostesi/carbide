@@ -140,11 +140,11 @@ INSTALLED_APPS = (
     'django_extensions',
     'raven',
     'newrelic',
+    'lettuce.django',
     'confidential',
     'users',
     'organizations',
     'events',
-    'lettuce.django',
 )
 
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'

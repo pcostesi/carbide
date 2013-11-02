@@ -15,8 +15,8 @@ install:
 
 # command to run tests
 # script: nosetests
-script: 
-  - "python manage.py test"
+script:
+  - 'python manage.py test $(ls apps | grep -v "__" | cut -f2 -d"/" )'
   - "python manage.py harvest features"
 
 before_script:
