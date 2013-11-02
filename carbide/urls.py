@@ -5,4 +5,8 @@ from django.conf.urls import patterns, include, url
 # from django.contrib import admin
 # admin.autodiscover()
 
-urlpatterns = patterns('',)
+from mocks.views import LoginView
+
+urlpatterns = patterns('',
+    url(r"", include('mocks.urls')),
+    )
