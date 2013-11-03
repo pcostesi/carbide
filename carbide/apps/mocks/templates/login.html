@@ -1,6 +1,6 @@
 <!doctype html>
 
-<html>
+<!-- <html>
     <head>
     </head>
 
@@ -10,5 +10,42 @@
         <h1> Hello World (sooo cliche)</h1>
         <p>«{{ var }}»</p>
     </body>
+</html> -->
 
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="../../../static/css/bootstrap.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../static/css/bootstrap-responsive.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../static/css/login.css"/>
+</head>
+
+<body>
+	<div id="logo">
+		<img alt-text="Logo Image"/>
+		<h1>Carbide!</h1>
+	</div>
+	<form>
+		
+		<div class="form-input">
+			<label>Email</label>
+			<div class="input-wrapper">
+				<input type="email" placeholder="your email">
+			</div>
+			<div class="error-message">Sorry, invalid email</div>
+		</div>
+
+		<div class="form-input">
+			<label>Password</label>
+			<div class="input-wrapper">
+				<input type="password" placeholder="your password">
+			</div>
+			<div class="error-message">Sorry, invalid password</div>
+		</div>
+
+		<div class="button-wrapper">
+			<button type="submit">Log in</button>
+		</div>
+
+	</form>
+</body>
 </html>
