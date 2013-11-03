@@ -13,20 +13,20 @@ def test():
         local("python manage.py test")
 
 
-def django_translate(user="www-data"):
-    with prefix(". env/bin/activate"):
-        sudo("python manage.py compilemessages", user=user)
-        sudo("python manage.py collectstatic --noinput", user=user)
-        sudo("python manage.py clean_pyc")
-        sudo("python manage.py compile_pyc", user=user)
+# def django_translate(user="www-data"):
+#     with prefix(". env/bin/activate"):
+#         sudo("python manage.py compilemessages", user=user)
+#         sudo("python manage.py collectstatic --noinput", user=user)
+#         sudo("python manage.py clean_pyc")
+#         sudo("python manage.py compile_pyc", user=user)
 
 
-def django_deploy(branch=None, user="www-data"):
-    with prefix(". env/bin/activate"):
-        sudo("pip install -r dependencies.txt", user=user)
-        sudo("python manage.py syncdb", user=user)
-        sudo("python manage.py migrate", user=user)
-    django_translate(user)
+# def django_deploy(branch=None, user="www-data"):
+#     with prefix(". env/bin/activate"):
+#         sudo("pip install -r dependencies.txt", user=user)
+#         sudo("python manage.py syncdb", user=user)
+#         sudo("python manage.py migrate", user=user)
+#     django_translate(user)
 
 
 def install_dependencies():
@@ -49,7 +49,8 @@ def install_git_hooks():
 
 def run(port=8080):
     with prefix(". env/bin/activate"):
-        local("python manage.py runserver 0.0.0.0:%s" % (port,))
+        # local("python manage.py runserver 0.0.0.0:%s" % (port,))
+        local("foreman start")
 
 
 def clean():

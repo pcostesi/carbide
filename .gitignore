@@ -23,8 +23,9 @@ include/*
 npm-debug.log
 
 env
+.env
+carbide/staticfiles
 db
 
 local_settings.py
 carbide/local_settings.py
-carbide/conf/prod.py

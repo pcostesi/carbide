@@ -1,9 +1,9 @@
 import os
 from . import rel
+
 # Django settings for carbide project.
 
 DEBUG = os.environ.get('DEBUG', False)
-
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
@@ -55,7 +55,7 @@ MEDIA_URL = '/media/'
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/var/www/example.com/static/"
-STATIC_ROOT = '../static'
+STATIC_ROOT = '../staticfiles'
 
 # URL prefix for static files.
 # Example: "http://example.com/static/", "http://static.example.com/"
@@ -66,7 +66,7 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    rel("static")
+    rel("staticfiles"),
 )
 
 # List of finder classes that know how to find static files in
@@ -74,7 +74,6 @@ STATICFILES_DIRS = (
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-    'compressor.finders.CompressorFinder',
     # 'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
@@ -125,6 +124,8 @@ INSTALLED_APPS = (
     'users',
     'organizations',
     'events',
+    'mocks',
+    'lettuce.django',
 )
 
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'
@@ -163,26 +164,5 @@ LOGGING = {
             'level': 'ERROR',
             'propagate': True,
         },
-    }
-}
-
-# Local settings
-# Make this unique, and don't share it with anybody.
-SECRET_KEY = 'THIS K3Y B3 SEKRITS'
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'db',
-        # Or path to database file if using sqlite3.
-        # The following settings are not used with sqlite3:
-        'USER': '',
-        'PASSWORD': '',
-        'HOST': '',
-        # Empty for localhost through domain sockets or '127.0.0.1' for
-        # localhost through TCP.
-        'PORT': '',
-        # Set to empty string for default.
     }
 }
