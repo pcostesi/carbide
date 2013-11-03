@@ -1,20 +1,7 @@
 @import "theme.less";
 
-#logo {
-	&:extend(.jumbotron all);
-	background-color: @blue;
-}
-
 form {
 	&:extend(.form-horizontal all);
-
-	.button-wrapper {
-		&:extend(col-sm-offset-2 all, col-sm-10 all);
-	
-		button{
-			&:extend(.btn all,.btn-primary all,.btn-lg all);
-		}
-	}
 
 	.form-input{
 		&:extend(.form-group all);
@@ -33,14 +20,21 @@ form {
 
 		.error-message {
 			&:extend(.alert all, .alert-danger all);
-			display: none;
+			.hidden();
 		}
 
 		&.error{
 			&:extend(.has-error all);
 			.error-message {
-				display: inherit;
+				.show();
 			}
+		}
+	}
+
+	.button-wrapper {
+		&:extend(col-sm-offset-2 all, col-sm-10 all);
+		button{
+			&:extend(.btn all,.btn-primary all,.btn-lg all);
 		}
 	}
 

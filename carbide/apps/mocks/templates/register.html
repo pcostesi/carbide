@@ -1,22 +1,10 @@
 <!doctype html>
 
-<!-- <html>
-    <head>
-    </head>
-
-    <body>
-
-
-        <h1> Hello World (sooo cliche)</h1>
-        <p>«{{ var }}»</p>
-    </body>
-</html> -->
-
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="../../../static/css/bootstrap.css"/>
 	<link rel="stylesheet" type="text/css" href="../../../static/css/bootstrap-responsive.css"/>
-	<link rel="stylesheet" type="text/css" href="../../../static/css/login.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../static/css/register.css"/>
 </head>
 
 <body>
@@ -45,8 +33,16 @@
 			<div class="error-message">Sorry, invalid password</div>
 		</div>
 
+		<div class="form-input">
+			<label>Confirm password</label>
+			<div class="input-wrapper">
+				<input type="password" placeholder="your password (again)">
+			</div>
+			<div class="error-message">Sorry, passwords don't match</div>
+		</div>
+
 		<div class="button-wrapper">
-			<button type="submit">Log in</button>
+			<button type="submit">Submit</button>
 		</div>
 
 	</form>
