@@ -26,3 +26,5 @@ env
 db
 
 local_settings.py
+carbide/local_settings.py
+carbide/conf/prod.py
