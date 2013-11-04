@@ -11,11 +11,16 @@ MIDDLEWARE_CLASSES += (
     # 'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
-    'debug_toolbar.middleware.DebugToolbarMiddleware',
+    #'debug_toolbar.middleware.DebugToolbarMiddleware',
+)
+
+STATICFILES_FINDERS += (
+    'pipeline.finders.PipelineFinder',
+    'pipeline.finders.CachedFileFinder',
 )
 
 INSTALLED_APPS += (
-    'debug_toolbar',
+    #'debug_toolbar',
 )
 
 INTERNAL_IPS = ('127.0.0.1',)

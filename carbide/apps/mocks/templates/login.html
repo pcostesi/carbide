@@ -1,36 +1,10 @@
+{% extends "base.html" %}
 {% load static from staticfiles %}
 {% load compressed %}
-<!doctype html>
 
-<!-- <html>
-    <head>
-    </head>
-
-    <body>
-
-
-        <h1> Hello World (sooo cliche)</h1>
-        <p>«{{ var }}»</p>
-    </body>
-</html> -->
-
-<html>
-<head>
-	<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}"/>
-	<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap-responsive.css' %}"/>
-	<link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}"/>
-</head>
-
-<body>
-	<div id="logo">
-		<div class="wrapper">
-			<img alt-text="Logo Image" src="{% static 'images/logo.png' %}"/>
-			<h1>Carbide!</h1>
-			<h3>Events. Easier</h3>
-		</div>
-	</div>
+{% block main %}
 	<form>
-		
+
 		<div class="form-input">
 			<label>Email</label>
 			<div class="input-wrapper">
@@ -52,5 +26,4 @@
 		</div>
 
 	</form>
-</body>
-</html>
+{% endblock %}

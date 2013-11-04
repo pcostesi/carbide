@@ -24,8 +24,9 @@ npm-debug.log
 
 env
 .env
-carbide/staticfiles
+staticfiles
 db
 
+less/**/*.css
 local_settings.py
 carbide/local_settings.py

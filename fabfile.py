@@ -3,6 +3,8 @@ from __future__ import with_statement
 import os
 
 from fabric.api import *
+from fabric.contrib.console import confirm
+from fabric.operations import prompt
 
 base_path = os.path.abspath(os.path.dirname(__file__))
 
@@ -31,7 +33,7 @@ def test():
 
 def install_dependencies():
     local("sudo apt-get install libpq-dev libxml2-dev libxslt-dev")
-    local("pip install --user virtualenv")
+    local("sudo pip install virtualenv")
 
 
 def create_venv():
@@ -73,9 +75,24 @@ def npm_install():
     local("npm install")
 
 
+def heroku_toolbelt():
+    local("wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh")
+
+
+def setup_env_vars():
+    key = prompt("What is your key?")
+    debug = confirm("Setup debug?")
+    with open(".env", "wb") as f:
+        f.write("DJANGO_SECRET_KEY=%s\n" % (key,))
+        if debug:
+            f.write("DEBUG=%s\n" % (debug,))
+
+
 def install():
     install_dependencies()
+    heroku_toolbelt()
     install_git_hooks()
     create_venv()
     pip_install()
     npm_install()
+    setup_env_vars()

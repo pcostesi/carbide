@@ -6,12 +6,11 @@ PIPELINE_COMPILERS = (
 )
 
 PIPELINE_CSS = {
-    'standard': {
+    'carbide': {
         'source_filenames': (
-            'css/*.css',
             'less/*.less',
         ),
-        'output_filename': 'css/s.css',
+        'output_filename': 'css/carbide.css',
         'extra_context': {
             'media': 'screen,projection',
         },
@@ -19,17 +18,26 @@ PIPELINE_CSS = {
     },
 }
 
-# PIPELINE_JS = {
-#     'standard': {
-#         'source_filenames': [
-#             # 'js/sample1.js',
-#             # 'js/sample2.js',
-#         ],
-#         'output_filename': 'js/s.js',
-#     }
-# }
+PIPELINE_JS = {
+    'standard': {
+        'source_filenames': [
+            'js/jquery-2.0.3.min.js',
+            'js/bootstrap.min.js',
+            'js/angular.min.js',
+        ],
+        'output_filename': 'js/s.js',
+    },
+    'all': {
+        'source_filenames': [
+            'js/**/*.js',
+        ],
+        'output_filename': 'js/all.js',
+    }
+}
 
-PIPELINE_JS_COMPRESSOR = 'pipeline.compressors.uglifyjs.UglifyJSCompressor'
-PIPELINE_CSS_COMPRESSOR = 'pipeline.compressors.cssmin.CSSMinCompressor'
+#PIPELINE_JS_COMPRESSOR = 'pipeline.compressors.uglifyjs.UglifyJSCompressor'
+#PIPELINE_CSS_COMPRESSOR = 'pipeline.compressors.cssmin.CSSMinCompressor'
 
-PIPELINE_UGLIFYJS_ARGUMENTS = '--screw-ie8 -c --comments'
+PIPELINE_UGLIFYJS_ARGUMENTS = '--screw-ie8'
+
+PIPELINE_ENABLED = True

@@ -1,0 +1,34 @@
+{% load static from staticfiles %}
+{% load compressed %}
+<!doctype html>
+
+<html>
+<head>
+{% compressed_css "bootstrap" %}
+{% compressed_css "carbide" %}
+{% compressed_js "standard" %}
+</head>
+
+<body>
+    {% block everything %}
+    {% block logo %}
+    <div id="logo">
+        <div class="wrapper">
+            <img alt-text="Logo Image" src="{% static 'images/logo.png' %}"/>
+            <h1>Carbide!</h1>
+            <h3>Events. Easier</h3>
+        </div>
+    </div>
+    {% endblock %}
+
+    <div class="main-card">
+    {% block main %}
+    {% endblock %}
+    </div>
+
+    <div class="">
+
+    </div>
+    {% endblock %}
+</body>
+</html>
