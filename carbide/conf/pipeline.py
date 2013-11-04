@@ -8,7 +8,7 @@ PIPELINE_COMPILERS = (
 PIPELINE_CSS = {
     'standard': {
         'source_filenames': (
-            #'css/*.css',
+            'css/*.css',
             'less/*.less',
         ),
         'output_filename': 'css/s.css',
@@ -19,15 +19,15 @@ PIPELINE_CSS = {
     },
 }
 
-PIPELINE_JS = {
-    'standard': {
-        'source_filenames': [
-            # 'js/sample1.js',
-            # 'js/sample2.js',
-        ],
-        'output_filename': 'js/s.js',
-    }
-}
+# PIPELINE_JS = {
+#     'standard': {
+#         'source_filenames': [
+#             # 'js/sample1.js',
+#             # 'js/sample2.js',
+#         ],
+#         'output_filename': 'js/s.js',
+#     }
+# }
 
 PIPELINE_JS_COMPRESSOR = 'pipeline.compressors.uglifyjs.UglifyJSCompressor'
 PIPELINE_CSS_COMPRESSOR = 'pipeline.compressors.cssmin.CSSMinCompressor'
