@@ -50,6 +50,7 @@ def install_git_hooks():
 def run(port=8080):
     with prefix(". env/bin/activate"):
         # local("python manage.py runserver 0.0.0.0:%s" % (port,))
+        local("python manage.py collectstatic --noinput")
         local("foreman start")
 
 
@@ -63,8 +64,18 @@ def pip_install():
         local("pip install -r requirements.txt")
 
 
+def setup_heroku():
+    local("heroku config:add BUILDPACK_"
+          "URL=https://github.com/sabf/heroku-buildpack-multi.git")
+
+
+def npm_install():
+    local("npm install")
+
+
 def install():
     install_dependencies()
     install_git_hooks()
     create_venv()
     pip_install()
+    npm_install()

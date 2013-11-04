@@ -1,0 +1,11 @@
+{
+ "name": "carbide-py",
+ "description": "Carbide",
+ "author": "SABFIT <pablo.costesich@sabf.org.ar>",
+ "dependencies": {
+      "less":">= 1.5.0",
+      "cssmin":">= 0.4.1",
+      "uglify-js":">= 2.4.2",
+      "yuglify":">= 1.0.4"
+ }
+}
