@@ -16,9 +16,9 @@ install:
 # command to run tests
 # script: nosetests
 script:
-  - 'DEBUG=True python manage.py test $(ls carbide/apps | grep -v ".py" | cut -f2 -d"/" )'
+  - 'DEBUG=True python manage.py test $(ls apps | grep -v ".py" | cut -f2 -d"/" )'
   - "DEBUG=True python manage.py harvest features"
 
 before_script:
-  - "pep8 --exclude=migrations --show-source --show-pep8 --ignore=E501,E225 carbide carbide/apps || echo ''"
+  - "pep8 --exclude=migrations --show-source --show-pep8 --ignore=E501,E225 carbide apps || echo ''"
 #  - "pyflakes -x W app"
