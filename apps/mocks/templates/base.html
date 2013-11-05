@@ -2,7 +2,7 @@
 {% load compressed %}
 <!doctype html>
 
-<html>
+<html data-ng-app="carbideApp">
 <head>
 {% compressed_css "bootstrap" %}
 {% compressed_css "carbide" %}
@@ -26,6 +26,7 @@
     {% endblock %}
     </div>
 
+    {% static "partials/mocks/test.html" %}
     <div class="">
 
     </div>

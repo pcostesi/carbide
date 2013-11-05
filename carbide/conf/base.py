@@ -1,8 +1,11 @@
 import os
+
 from . import rel
+import dotenv
+
+dotenv.read_dotenv(rel(".env"))
 
 # Django settings for carbide project.
-
 DEBUG = os.environ.get('DEBUG', False)
 TEMPLATE_DEBUG = DEBUG
 
