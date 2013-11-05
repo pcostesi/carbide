@@ -24,3 +24,23 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # Allow all host headers
 ALLOWED_HOSTS = ['*']
+
+
+# Logging
+LOG_LEVEL = 'DEBUG' if DEBUG else 'INFO'
+
+LOGGING['handlers']['sentry'] = {
+    'level': 'WARNING',
+    'class': 'raven.contrib.django.handlers.SentryHandler',
+}
+
+LOGGING['root'] = {
+    'handlers': ['syslog', 'sentry'],
+    'level': LOG_LEVEL,
+}
+
+LOGGING['loggers']['raven'] = {
+    'level': 'DEBUG',
+    'handlers': ['console'],
+    'propagate': False,
+}
