@@ -4,8 +4,8 @@ set -e
 
 
 source env/bin/activate
-DEBUG=True
-export DEBUG
+TEST=True
+export TEST
 pep8 --exclude=migrations --show-source --show-pep8 --ignore=E501,E225 carbide apps || echo ''
 python manage.py harvest features
 python manage.py test $(ls apps| grep -v ".py" | cut -f2 -d"/" )

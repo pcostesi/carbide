@@ -3,10 +3,11 @@ import os
 from . import rel
 import dotenv
 
-dotenv.read_dotenv(rel(".env"))
+env = ".test-env" if os.environ.get("TEST", False) else ".env"
+dotenv.read_dotenv(rel(env))
 
 # Django settings for carbide project.
-DEBUG = os.environ.get('DEBUG', False)
+DEBUG = os.environ.get('DEBUG', False) or os.environ.get('TEST', False)
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
